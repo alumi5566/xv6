@@ -9,7 +9,8 @@ main(int argc, char *argv[])
 
   if(argc < 2){
     printf(2, "Usage: rm files...\n");
-    exit();
+    //exit(); OS153_lab1
+    exit(1);
   }
 
   for(i = 1; i < argc; i++){
@@ -18,6 +19,6 @@ main(int argc, char *argv[])
       break;
     }
   }
-
-  exit();
+  //exit(); OS153_lab1
+  exit(0);
 }

@@ -69,6 +69,7 @@ argptr(int n, char **pp, int size)
   return 0;
 }
 
+
 // Fetch the nth word-sized system call argument as a string pointer.
 // Check that the pointer is valid and the string is nul-terminated.
 // (There is no shared writable memory, so the string can't change
@@ -103,6 +104,9 @@ extern int sys_unlink(void);
 extern int sys_wait(void);
 extern int sys_write(void);
 extern int sys_uptime(void);
+extern int sys_waitpid(void);
+extern int sys_SetPriority(void);
+//OS153_lab1
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -126,7 +130,10 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+[SYS_waitpid] sys_waitpid,
+[SYS_SetPriority] sys_SetPriority,
 };
+//OS153_lab1
 
 void
 syscall(void)

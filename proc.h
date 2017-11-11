@@ -49,7 +49,30 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+  int status;		      	// exit status OS153_lab1
+  int waitpid_pid[64];     	// pid of process who is waiting for you
+  int waitpid_count;       	// how many process waiting for you
+  int priority;		      	// process priority OS153_lab1
+  int startTime;		//
+  int endTime;		      	//
+  int turnAroundTime;		//
+  int runTime;		      	// wait time = turnaroundtime-runtime
 };
+
+//OS153_lab1
+//when sched: 		p->runtime += ticks - upTime;
+//when fork:  		proc->runtime = 0 //init
+//when exit:  		proc->runtime += proc->endtime - upTime;
+//when scheduler 	upTime = ticks;
+
+//sched: back to scheduler, means end of exec, calculate the time from
+//last time we call scheduler
+
+//exit: calculate the time from last time we call scheduler
+//(scheduler -> exit)
+
+//fork and put this process into ready (not exec yet)
+int upTime;
 
 // Process memory is laid out contiguously, low addresses first:
 //   text

@@ -20,3 +20,6 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
+//OS153_lab1
+#define SYS_waitpid 22
+#define SYS_SetPriority 23

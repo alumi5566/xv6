@@ -75,11 +75,13 @@ main(int argc, char *argv[])
 {
   int i;
 
-  if(argc < 2){
+  if(argc < 2){ // ls the current dir
     ls(".");
-    exit();
+    //exit(); OS153_lab1
+    exit(0);
   }
   for(i=1; i<argc; i++)
     ls(argv[i]);
-  exit();
+  //exit(); OS153_lab1
+  exit(0);
 }
